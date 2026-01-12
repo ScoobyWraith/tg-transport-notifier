@@ -1,1 +1,3 @@
-# tg-transport-notifier
+## tg-transport-notifier
+
+Telegram бот, информирующий о приближении общественного транспорта за заданное время.
