@@ -1,4 +1,7 @@
 spring:
+  config:
+    import:
+      - classpath:tg-credentials.yml
   main:
     banner-mode: "off"
 

@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>tg-assistant</module>
+        <module>common</module>
+        <module>common/bot</module>
     </modules>
 
     <properties>
@@ -20,6 +22,7 @@
         <jackson.version>2.13.3</jackson.version>
         <lombok.version>1.18.42</lombok.version>
         <spring-boot-starter.version>3.1.5</spring-boot-starter.version>
+        <tg-libs.version>6.7.0</tg-libs.version>
     </properties>
 
     <parent>
@@ -40,6 +43,18 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.telegram</groupId>
+                <artifactId>telegrambots</artifactId>
+                <version>${tg-libs.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.telegram</groupId>
+                <artifactId>telegrambots-spring-boot-starter</artifactId>
+                <version>${tg-libs.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
