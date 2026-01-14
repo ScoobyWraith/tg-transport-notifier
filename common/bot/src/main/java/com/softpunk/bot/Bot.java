@@ -25,7 +25,11 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        this.settings.updateReceiver().onUpdateReceived(update);
+        UpdateReceiver updateReceiver = this.settings.updateReceiver();
+
+        if (updateReceiver != null) {
+            updateReceiver.onUpdateReceived(update);
+        }
     }
 
     @Override
