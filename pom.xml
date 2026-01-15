@@ -20,7 +20,6 @@
 
         <spring-boot-starter.version>3.1.5</spring-boot-starter.version>
         <tg-libs.version>6.7.0</tg-libs.version>
-        <logback.version>1.5.24</logback.version>
     </properties>
 
     <parent>
