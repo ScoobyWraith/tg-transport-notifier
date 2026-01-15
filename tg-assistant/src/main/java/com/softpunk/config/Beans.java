@@ -16,7 +16,7 @@ public class Beans {
     }
 
     @Bean
-    public LocalesGetter localesGetter(ObjectMapper mapper) {
-        return new LocalesGetter(mapper, "");
+    public LocalesGetter localesGetter(ObjectMapper mapper, AppSettings appSettings) {
+        return new LocalesGetter(mapper, appSettings.getLocalization().path());
     }
 }
