@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -27,8 +28,14 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         UpdateReceiver updateReceiver = this.settings.updateReceiver();
 
-        if (updateReceiver != null) {
-            updateReceiver.onUpdateReceived(update);
+        if (updateReceiver == null) {
+            return;
+        }
+
+        updateReceiver.onUpdateReceived(update);
+
+        for (SendMessage sendMessage : updateReceiver.getMessagesToSend()) {
+            this.sendMessage(sendMessage);
         }
     }
 
@@ -37,12 +44,16 @@ public class Bot extends TelegramLongPollingBot {
         return this.settings.name();
     }
 
-    public void send(SendMessage sendMessage) {
+    public Message sendMessage(SendMessage sendMessage) {
+        Message result = null;
+
         try {
-            execute(sendMessage);
+            result = execute(sendMessage);
         } catch (TelegramApiException e) {
             log.warn("Error on sending message '{}'.", sendMessage);
         }
+
+        return result;
     }
 
     private static TelegramBotsApi getApi() throws TelegramApiException {
