@@ -14,9 +14,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "app")
 public class AppSettings {
     LocalizationSettings localization;
-
+    SessionSettings session;
 
     public record LocalizationSettings(String path) {}
-
-
+    public record SessionSettings(int limit, String defaultLocale) {}
 }

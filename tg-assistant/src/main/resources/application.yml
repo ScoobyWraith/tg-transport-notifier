@@ -11,4 +11,7 @@ logging:
 
 app:
   localization:
-    path: ""
+    path: "./common/localization/src/main/resources/locales.json"
+  session:
+    limit: 100
+    defaultLocale: "ru"
