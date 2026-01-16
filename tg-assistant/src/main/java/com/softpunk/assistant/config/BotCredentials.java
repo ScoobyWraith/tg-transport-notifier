@@ -1,4 +1,4 @@
-package com.softpunk.config;
+package com.softpunk.assistant.config;
 
 import lombok.AccessLevel;
 import lombok.Getter;

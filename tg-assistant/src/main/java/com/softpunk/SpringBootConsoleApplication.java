@@ -1,9 +1,9 @@
 package com.softpunk;
 
+import com.softpunk.assistant.config.BotCredentials;
 import com.softpunk.bot.Bot;
 import com.softpunk.bot.InitBotSettings;
 import com.softpunk.bot.UpdateReceiver;
-import com.softpunk.config.BotCredentials;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

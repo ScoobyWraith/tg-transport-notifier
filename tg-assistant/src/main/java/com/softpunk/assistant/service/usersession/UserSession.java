@@ -1,6 +1,6 @@
-package com.softpunk.service.usersession;
+package com.softpunk.assistant.service.usersession;
 
-import com.softpunk.service.usersession.state.StateMachine;
+import com.softpunk.assistant.service.usersession.state.StateMachine;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.annotation.Scope;

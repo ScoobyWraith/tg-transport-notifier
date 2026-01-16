@@ -1,8 +1,8 @@
-package com.softpunk.service;
+package com.softpunk.assistant.service;
 
+import com.softpunk.assistant.config.AppSettings;
+import com.softpunk.assistant.service.usersession.UserSession;
 import com.softpunk.bot.UpdateReceiver;
-import com.softpunk.config.AppSettings;
-import com.softpunk.service.usersession.UserSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Component;
