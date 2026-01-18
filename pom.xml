@@ -11,6 +11,7 @@
     <modules>
         <module>tg-assistant</module>
         <module>common</module>
+        <module>tg-notifier</module>
     </modules>
 
     <properties>

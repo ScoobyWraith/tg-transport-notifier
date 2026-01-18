@@ -1,0 +1,23 @@
+spring:
+  config:
+    import:
+      - classpath:tg-credentials.yml
+      - classpath:database.yml
+  main:
+    banner-mode: "off"
+
+logging:
+  level:
+    com.softpunk: DEBUG
+
+app:
+  localization:
+    path: "./common/localization/src/main/resources/locales.json"
+  session:
+    defaultLocale: "ru"
+  schedule:
+    maxIntervalMinutes: 90
+  notifier:
+    periodMs: 10000
+    minDelayMs: 20000
+    maxDelayMs: 40000

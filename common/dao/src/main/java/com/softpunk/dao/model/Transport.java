@@ -23,7 +23,7 @@ public class Transport {
     private String stopId;
 
     @Column(name = "transport_name", nullable = false)
-    private String busName;
+    private String transportName;
 
     @Column(name = "common_name", nullable = false)
     private String commonName;

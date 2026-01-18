@@ -24,13 +24,13 @@ public class TransportClient implements Client {
             List<String> transports = transportsOnStops.get(stopId);
             List<TransportDto> resultTransports = new ArrayList<>();
 
-            for (String transportId : transports) {
-                Random rnd = new Random((long) rndInitSeed * transportId.hashCode());
+            for (String transportName : transports) {
+                Random rnd = new Random((long) rndInitSeed * transportName.hashCode());
 
                 int periodMs = (int) (minIntervalMs + (maxIntervalMs - minIntervalMs) * rnd.nextDouble());
                 long periods = now.toEpochMilli() / periodMs;
                 Instant estimated = Instant.ofEpochMilli((periods + 1) * periodMs);
-                resultTransports.add(new TransportDto(transportId, estimated));
+                resultTransports.add(new TransportDto(transportName, estimated));
             }
 
             result.put(stopId, resultTransports);
