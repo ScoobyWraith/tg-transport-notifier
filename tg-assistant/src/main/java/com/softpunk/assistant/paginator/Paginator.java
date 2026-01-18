@@ -1,7 +1,7 @@
 package com.softpunk.assistant.paginator;
 
-import com.softpunk.bot.keyboards.KbPaginator;
-import com.softpunk.bot.usersession.UserSession;
+import com.softpunk.assistant.keyboard.KbPaginator;
+import com.softpunk.assistant.usersession.UserSession;
 import com.softpunk.localization.Aliases;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 

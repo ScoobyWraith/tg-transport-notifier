@@ -1,10 +1,11 @@
 package com.softpunk.assistant.callback.callbacks;
 
-import com.softpunk.bot.callback.dto.CallbackData;
-import com.softpunk.bot.callback.dto.NavigatePaginationCallbackData;
-import com.softpunk.bot.paginator.Paginator;
-import com.softpunk.bot.usersession.UserSession;
-import com.softpunk.bot.usersession.state.State;
+import com.softpunk.assistant.callback.Callback;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.callback.dto.NavigatePaginationCallbackData;
+import com.softpunk.assistant.paginator.Paginator;
+import com.softpunk.assistant.usersession.UserSession;
+import com.softpunk.assistant.usersession.state.State;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;

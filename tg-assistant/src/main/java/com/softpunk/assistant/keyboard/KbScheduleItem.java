@@ -1,7 +1,7 @@
 package com.softpunk.assistant.keyboard;
 
-import com.softpunk.bot.callback.dto.CallbackData;
-import com.softpunk.bot.usersession.state.userlist.callbacks.dto.ScheduleItemCallbackData;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.usersession.state.userlist.callbacks.dto.ScheduleItemCallbackData;
 import com.softpunk.localization.Aliases;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

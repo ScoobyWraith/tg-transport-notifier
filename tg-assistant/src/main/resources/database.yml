@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+      jdbc:
+        time_zone: UTC
+  sql:
+    init:
+      mode: always
+  datasource:
+    driverClassName: ${DB_DRIVER:org.postgresql.Driver}
+    username: ${DB_USER:service}
+    password: ${DB_PASSWORD:service}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/transport-notifier}

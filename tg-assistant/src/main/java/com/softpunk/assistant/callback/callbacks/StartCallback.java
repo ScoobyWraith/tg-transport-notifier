@@ -1,8 +1,9 @@
 package com.softpunk.assistant.callback.callbacks;
 
-import com.softpunk.bot.callback.dto.CallbackData;
-import com.softpunk.bot.command.StartCommand;
-import com.softpunk.bot.usersession.UserSession;
+import com.softpunk.assistant.callback.Callback;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.command.commands.StartCommand;
+import com.softpunk.assistant.usersession.UserSession;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

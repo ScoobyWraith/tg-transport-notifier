@@ -34,7 +34,7 @@ public class Bot extends TelegramLongPollingBot {
 
         updateReceiver.onUpdateReceived(update);
 
-        for (SendMessage sendMessage : updateReceiver.getMessagesToSend()) {
+        for (SendMessage sendMessage : updateReceiver.getMessagesToSend(update)) {
             this.sendMessage(sendMessage);
         }
     }

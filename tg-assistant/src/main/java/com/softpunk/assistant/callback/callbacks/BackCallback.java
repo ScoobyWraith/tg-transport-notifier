@@ -1,7 +1,8 @@
 package com.softpunk.assistant.callback.callbacks;
 
-import com.softpunk.bot.callback.dto.CallbackData;
-import com.softpunk.bot.usersession.UserSession;
+import com.softpunk.assistant.callback.Callback;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.usersession.UserSession;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
@@ -14,7 +15,6 @@ public class BackCallback extends Callback {
 
     @Override
     public void processCallback(UserSession session, CallbackQuery query) {
-        session.getMessagesDispatcher().prepareMessageToRemoveAll();
         session.getStateMachine().back();
         session.getStateMachine().getCurrentState().fillMessages(session);
     }

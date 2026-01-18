@@ -8,5 +8,5 @@ import java.util.List;
 public interface UpdateReceiver {
     void onUpdateReceived(Update update);
 
-    List<SendMessage> getMessagesToSend();
+    List<SendMessage> getMessagesToSend(Update update);
 }

@@ -15,7 +15,14 @@ import org.springframework.stereotype.Component;
 public class AppSettings {
     LocalizationSettings localization;
     SessionSettings session;
+    PaginationSettings pagination;
+    ScheduleSettings schedule;
+    StatesSettings states;
+    boolean useMainMenuButton;
 
     public record LocalizationSettings(String path) {}
     public record SessionSettings(int limit, String defaultLocale) {}
+    public record PaginationSettings(int pageSize) {}
+    public record ScheduleSettings(int maxIntervalMinutes) {}
+    public record StatesSettings(int statesSizeToBackButton) {}
 }

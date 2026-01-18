@@ -2,7 +2,8 @@ package com.softpunk.assistant.keyboard;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.softpunk.bot.callback.dto.CallbackData;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.config.AppSettings;
 import com.softpunk.localization.LocalesGetter;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,13 +22,13 @@ import java.util.Map;
 @Component
 @Slf4j
 public abstract class Keyboard<Data> {
-    @Autowired
-    @Setter
-    @Getter
+    @Autowired @Setter @Getter
+    protected AppSettings appSettings;
+
+    @Autowired @Setter @Getter
     protected LocalesGetter localesGetter;
 
-    @Autowired
-    @Setter
+    @Autowired @Setter
     protected ObjectMapper objectMapper;
 
     public abstract void addKeyboard(SendMessage message, String lang);

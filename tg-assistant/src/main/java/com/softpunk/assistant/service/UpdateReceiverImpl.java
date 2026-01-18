@@ -1,7 +1,9 @@
 package com.softpunk.assistant.service;
 
+import com.softpunk.assistant.callback.CallbackDispatcher;
+import com.softpunk.assistant.command.CommandsDispatcher;
 import com.softpunk.assistant.config.AppSettings;
-import com.softpunk.assistant.service.usersession.UserSession;
+import com.softpunk.assistant.usersession.UserSession;
 import com.softpunk.bot.UpdateReceiver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,18 +21,28 @@ import java.util.Map;
 public class UpdateReceiverImpl implements UpdateReceiver {
     private final AppSettings appSettings;
     private final AutowireCapableBeanFactory factory;
+    private final CommandsDispatcher commandsDispatcher;
+    private final CallbackDispatcher callbackDispatcher;
 
     private final Map<Long, UserSession> sessions = new HashMap<>();
 
     @Override
     public void onUpdateReceived(Update update) {
         UserSession session = this.getSession(update);
+        session.getMessagesDispatcher().clear();
+        session.setLastUpdate(Instant.now());
+        boolean commandProcessed = commandsDispatcher.process(session, update);
+        boolean callbackProcessed = callbackDispatcher.process(session, update);
 
+        if (!commandProcessed && !callbackProcessed) {
+            commandsDispatcher.fallback(session, update);
+        }
     }
 
     @Override
-    public List<SendMessage> getMessagesToSend() {
-        return List.of();
+    public List<SendMessage> getMessagesToSend(Update update) {
+        UserSession session = this.getSession(update);
+        return session.getMessagesDispatcher().getMessagesToSend();
     }
 
     public static long getChatIdFromUpdate(Update update) {

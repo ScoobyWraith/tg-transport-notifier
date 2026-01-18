@@ -2,6 +2,7 @@ spring:
   config:
     import:
       - classpath:tg-credentials.yml
+      - classpath:database.yml
   main:
     banner-mode: "off"
 
@@ -15,3 +16,10 @@ app:
   session:
     limit: 100
     defaultLocale: "ru"
+  pagination:
+    pageSize: 5
+  schedule:
+    maxIntervalMinutes: 90
+  states:
+    statesSizeToBackButton: 5
+  useMainMenuButton: true

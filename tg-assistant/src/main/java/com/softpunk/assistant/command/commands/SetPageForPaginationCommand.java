@@ -1,8 +1,8 @@
 package com.softpunk.assistant.command.commands;
 
-import com.softpunk.bot.paginator.Paginator;
-import com.softpunk.bot.usersession.UserSession;
-import com.softpunk.bot.usersession.state.State;
+import com.softpunk.assistant.paginator.Paginator;
+import com.softpunk.assistant.usersession.UserSession;
+import com.softpunk.assistant.usersession.state.State;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Message;
 

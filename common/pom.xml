@@ -14,5 +14,6 @@
     <modules>
         <module>bot</module>
         <module>localization</module>
+        <module>dao</module>
     </modules>
 </project>

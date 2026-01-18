@@ -1,10 +1,10 @@
 package com.softpunk.assistant.keyboard;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.softpunk.bot.callback.dto.CallbackData;
-import com.softpunk.bot.callback.dto.NavigatePaginationCallbackData;
-import com.softpunk.bot.paginator.PaginatorData;
-import com.softpunk.bot.paginator.PaginatorRecord;
+import com.softpunk.assistant.callback.dto.CallbackData;
+import com.softpunk.assistant.callback.dto.NavigatePaginationCallbackData;
+import com.softpunk.assistant.paginator.PaginatorData;
+import com.softpunk.assistant.paginator.PaginatorRecord;
 import com.softpunk.localization.Aliases;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

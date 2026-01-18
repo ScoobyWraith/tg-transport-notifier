@@ -1,7 +1,7 @@
 package com.softpunk.assistant.command;
 
-import com.softpunk.assistant.service.usersession.UserSession;
-import com.softpunk.assistant.service.usersession.state.State;
+import com.softpunk.assistant.usersession.UserSession;
+import com.softpunk.assistant.usersession.state.State;
 import com.softpunk.localization.LocalesGetter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.softpunk.assistant.callback;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.softpunk.assistant.callback.dto.CallbackData;
-import com.softpunk.assistant.service.usersession.UserSession;
+import com.softpunk.assistant.usersession.UserSession;
 import com.softpunk.localization.LocalesGetter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

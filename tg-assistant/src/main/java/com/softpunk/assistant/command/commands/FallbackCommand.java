@@ -1,7 +1,8 @@
 package com.softpunk.assistant.command.commands;
 
-import com.softpunk.bot.keyboards.KbToMainMenu;
-import com.softpunk.bot.usersession.UserSession;
+import com.softpunk.assistant.command.Command;
+import com.softpunk.assistant.keyboard.KbToMainMenu;
+import com.softpunk.assistant.usersession.UserSession;
 import com.softpunk.localization.Aliases;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
