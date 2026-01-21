@@ -1,7 +1,7 @@
 package com.softpunk.tgassistant.usersession.state.schedule;
 
+import com.softpunk.config.AppSettings;
 import com.softpunk.localization.Aliases;
-import com.softpunk.tgassistant.config.AppSettings;
 import com.softpunk.tgassistant.keyboard.KbBack;
 import com.softpunk.tgassistant.usersession.UserSession;
 import com.softpunk.tgassistant.usersession.state.State;

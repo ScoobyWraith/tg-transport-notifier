@@ -1,10 +1,10 @@
 package com.softpunk.tgassistant.usersession.state.schedule;
 
+import com.softpunk.config.AppSettings;
 import com.softpunk.dao.TransportRepository;
 import com.softpunk.dao.model.Transport;
 import com.softpunk.tgassistant.callback.callbacks.NavigatePaginationCallback;
 import com.softpunk.tgassistant.command.commands.SetPageForPaginationCommand;
-import com.softpunk.tgassistant.config.AppSettings;
 import com.softpunk.tgassistant.keyboard.KbPaginator;
 import com.softpunk.tgassistant.paginator.Paginator;
 import com.softpunk.tgassistant.paginator.PaginatorDataGetter;

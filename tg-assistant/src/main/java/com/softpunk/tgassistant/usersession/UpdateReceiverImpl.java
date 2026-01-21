@@ -1,10 +1,9 @@
-package com.softpunk.tgassistant.service;
+package com.softpunk.tgassistant.usersession;
 
 import com.softpunk.bot.UpdateReceiver;
+import com.softpunk.config.AppSettings;
 import com.softpunk.tgassistant.callback.CallbackDispatcher;
 import com.softpunk.tgassistant.command.CommandsDispatcher;
-import com.softpunk.tgassistant.config.AppSettings;
-import com.softpunk.tgassistant.usersession.UserSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Component;

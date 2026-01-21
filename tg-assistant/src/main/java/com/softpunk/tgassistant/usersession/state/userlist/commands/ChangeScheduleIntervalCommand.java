@@ -1,11 +1,11 @@
 package com.softpunk.tgassistant.usersession.state.userlist.commands;
 
+import com.softpunk.config.AppSettings;
 import com.softpunk.dao.ScheduleRepository;
 import com.softpunk.dao.model.Schedule;
 import com.softpunk.localization.Aliases;
 import com.softpunk.tgassistant.command.commands.AutowiredCommand;
 import com.softpunk.tgassistant.command.commands.FallbackCommand;
-import com.softpunk.tgassistant.config.AppSettings;
 import com.softpunk.tgassistant.usersession.UserSession;
 import com.softpunk.tgassistant.usersession.state.userlist.ChangeScheduleIntervalState;
 import lombok.Setter;

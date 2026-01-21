@@ -1,4 +1,4 @@
-package com.softpunk.tgassistant.service;
+package com.softpunk.service;
 
 import com.softpunk.dao.model.Schedule;
 

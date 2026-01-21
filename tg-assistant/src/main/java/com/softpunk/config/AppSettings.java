@@ -1,4 +1,4 @@
-package com.softpunk.tgassistant.config;
+package com.softpunk.config;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -19,10 +19,12 @@ public class AppSettings {
     ScheduleSettings schedule;
     StatesSettings states;
     boolean useMainMenuButton;
+    NotifierSettings notifier;
 
     public record LocalizationSettings(String path) {}
     public record SessionSettings(int limit, String defaultLocale) {}
     public record PaginationSettings(int pageSize) {}
     public record ScheduleSettings(int maxIntervalMinutes) {}
     public record StatesSettings(int statesSizeToBackButton) {}
+    public record NotifierSettings(boolean enable, int periodMs, int minDelayMs, int maxDelayMs) {}
 }

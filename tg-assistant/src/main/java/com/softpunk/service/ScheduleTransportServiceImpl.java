@@ -1,4 +1,4 @@
-package com.softpunk.tgnotifier.service;
+package com.softpunk.service;
 
 import com.softpunk.dao.ScheduleRepository;
 import com.softpunk.dao.TransportRepository;

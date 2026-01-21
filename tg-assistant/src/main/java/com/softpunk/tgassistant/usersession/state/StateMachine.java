@@ -1,6 +1,6 @@
 package com.softpunk.tgassistant.usersession.state;
 
-import com.softpunk.tgassistant.config.AppSettings;
+import com.softpunk.config.AppSettings;
 import com.softpunk.tgassistant.usersession.state.mainmenu.MainMenuState;
 import lombok.Getter;
 import lombok.Setter;

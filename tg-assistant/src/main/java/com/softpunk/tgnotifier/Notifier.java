@@ -1,11 +1,11 @@
 package com.softpunk.tgnotifier;
 
 import com.softpunk.bot.Bot;
+import com.softpunk.config.AppSettings;
 import com.softpunk.dao.model.Schedule;
 import com.softpunk.localization.Aliases;
 import com.softpunk.localization.LocalesGetter;
-import com.softpunk.tgnotifier.config.AppSettings;
-import com.softpunk.tgnotifier.service.ScheduleTransportService;
+import com.softpunk.service.ScheduleTransportService;
 import com.softpunk.transportclient.TransportDto;
 import com.softpunk.transportclient.mockimpl.TransportClient;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +35,10 @@ public class Notifier {
 
     @Scheduled(fixedDelayString  = "${app.notifier.periodMs}")
     public void notifyUsers() {
+        if (!appSettings.getNotifier().enable()) {
+            return;
+        }
+
         String defaultLocale = appSettings.getSession().defaultLocale();
         Instant now = Instant.now();
         List<Schedule> outOfDate = new ArrayList<>();
@@ -62,7 +66,14 @@ public class Notifier {
             transportsByStops.get(stopId).add(transportName);
         }
 
-        Map<String, List<TransportDto>> transportsWithTimeArrived = transportClient.getEstimated(transportsByStops);
+        Map<String, List<TransportDto>> transportsWithTimeArrived = Map.of();
+
+        if (!transportsByStops.isEmpty()) {
+            transportsWithTimeArrived = transportClient.getEstimated(transportsByStops);
+        } else {
+            log.debug("'transportsByStops' is empty. Skip using transportClient.");
+        }
+
         List<Schedule> undefined = new ArrayList<>();
         List<Schedule> comingSoon = new ArrayList<>();
         Map<String, Map<String, String>> comingSoonTimes = new HashMap<>();
@@ -126,6 +137,7 @@ public class Notifier {
                         String.valueOf(schedule.getUserId()),
                         localesGetter.getText(notifyElement.alias(), defaultLocale, notifyElement.argsGetter.apply(schedule))
                 );
+                sendMessage.enableHtml(true);
                 bot.sendMessage(sendMessage);
             }
         }

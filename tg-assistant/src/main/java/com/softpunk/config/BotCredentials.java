@@ -1,4 +1,4 @@
-package com.softpunk.tgassistant.config;
+package com.softpunk.config;
 
 import lombok.AccessLevel;
 import lombok.Getter;

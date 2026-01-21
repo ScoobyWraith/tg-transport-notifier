@@ -1,13 +1,13 @@
 package com.softpunk.tgassistant.usersession.state.schedule.commands;
 
+import com.softpunk.config.AppSettings;
 import com.softpunk.dao.TransportRepository;
 import com.softpunk.dao.model.Transport;
 import com.softpunk.localization.Aliases;
+import com.softpunk.service.ScheduleTransportService;
 import com.softpunk.tgassistant.command.commands.AutowiredCommand;
 import com.softpunk.tgassistant.command.commands.FallbackCommand;
 import com.softpunk.tgassistant.command.commands.StartCommand;
-import com.softpunk.tgassistant.config.AppSettings;
-import com.softpunk.tgassistant.service.ScheduleTransportService;
 import com.softpunk.tgassistant.usersession.UserSession;
 import com.softpunk.tgassistant.usersession.state.schedule.SetScheduleIntervalState;
 import lombok.Setter;

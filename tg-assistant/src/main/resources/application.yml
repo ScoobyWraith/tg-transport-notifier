@@ -23,3 +23,8 @@ app:
   states:
     statesSizeToBackButton: 5
   useMainMenuButton: true
+  notifier:
+    enable: true
+    periodMs: 10000
+    minDelayMs: 20000
+    maxDelayMs: 40000
