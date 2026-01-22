@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - ./common/dao/src/main/resources:/docker-entrypoint-initdb.d
+      - ./db_data:/var/lib/postgresql/data
+    networks:
+      - transport-notifier-network
+
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_DRIVER: ${DB_DRIVER}
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      BOT_NAME: ${BOT_NAME}
+      BOT_TOKEN: ${BOT_TOKEN}
+    networks:
+      - transport-notifier-network
+
+networks:
+  transport-notifier-network:
+    driver: bridge
